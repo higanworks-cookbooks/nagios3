@@ -14,6 +14,6 @@ end
 
 service "nagios3" do
   Chef::Provider::Service::Init::Debian
-  action :disable
+  status_command "service nagios3 status"
+  action [:disable, :stop]
 end
-
